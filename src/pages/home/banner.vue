@@ -23,6 +23,7 @@
 export default {
   async created(){
     let data=await this.models.home.banner();
+    
   }
 }
 </script>
