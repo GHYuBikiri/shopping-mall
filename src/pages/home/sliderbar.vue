@@ -2,10 +2,9 @@
   <div class="sliderbar">
     <div class="title">热销榜</div>
     <ul class="list">
-      <li class="list-item clearfix">
-        <img class="icon" src="imgs/slidericon1.png" alt="">
-        <span class="name">
-          全站<br>热销榜
+      <li class="list-item clearfix" v-for="(item,index) in data" :key="index">
+        <img class="icon" :src="item.src|imgurl" :alt="item.text">
+        <span class="name" v-html="item.text">
         </span>
       </li>
     </ul>
@@ -14,8 +13,14 @@
 
 <script type="text/javascript">
 export default {
+  data(){
+    return {
+      data: null,
+    }
+  },
   async created(){
-    
+    let d1=await this.models.home.sidebar();
+    this.data = d1.data.data;
   }
 }
 </script>

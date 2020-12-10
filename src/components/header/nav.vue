@@ -1,178 +1,20 @@
 <template>
   <nav>
     <ul class="catalog-href-list clearfix">
-      <li class="catalog-href active fl">
-        <a href="javascript:;" class="title">首页</a>
-      </li>
-      <li class="catalog-href fl">
-        <a href="javascript:;" class="title">居家生活</a>
-      </li>
-      <li class="catalog-href fl">
-        <a href="javascript:;" class="title">服饰鞋包</a>
-      </li>
-      <li class="catalog-href fl">
-        <a href="javascript:;" class="title">个户清理</a>
-      </li>
-      <li class="catalog-href fl">
-        <a href="javascript:;" class="title">母婴亲子</a>
-      </li>
-      <li class="catalog-href fl">
-        <a href="javascript:;" class="title">运动旅行</a>
-      </li>
-      <li class="catalog-href fl">
-        <a href="javascript:;" class="title">数码家电</a>
-      </li>
-      <li class="catalog-href fl">
-        <a href="javascript:;" class="title">礼品特色</a>
-      </li>
-      <li class="catalog-href fl">
-        <a href="javascript:;" class="title">为你严选</a>
-      </li>
-      <li class="catalog-href fl">
-        <a href="javascript:;" class="title">众筹</a>
+      <li @mouseover.stop="cur=index" @mouseout.stop="cur=-1" :class="['catalog-href','fl',{active:cur===index}]" v-for="(item,index) in catalog" :key="index">
+        <a href="javascript:;" class="title">{{item}}</a>
       </li>
     </ul>
-    <div class="catalog-list">
+    <div class="catalog-list" v-if="data">
       <ul class="clearfix">
-        <li class="catalog-column fl">
-          <div class="title">春夏焕新</div>
+        <li class="catalog-column fl"
+         v-for="(item,index) in data" :key="index">
+          <div class="title">{{item.title}}</div>
           <div>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon1.png" alt="">
-              <span>夏凉系列</span>
-            </a>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon2.png" alt="">
-              <span>主题床品</span>
-            </a>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon3.png" alt="">
-              <span>材质精选</span>
-            </a>
-          </div>
-        </li>
-        <li class="catalog-column fl">
-          <div class="title">春夏焕新</div>
-          <div>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon1.png" alt="">
-              <span>夏凉系列</span>
-            </a>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon2.png" alt="">
-              <span>主题床品</span>
-            </a>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon3.png" alt="">
-              <span>材质精选</span>
-            </a>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon3.png" alt="">
-              <span>材质精选</span>
-            </a>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon3.png" alt="">
-              <span>材质精选</span>
-            </a>
-          </div>
-        </li>
-        <li class="catalog-column fl">
-          <div class="title">春夏焕新</div>
-          <div>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon1.png" alt="">
-              <span>夏凉系列</span>
-            </a>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon2.png" alt="">
-              <span>主题床品</span>
-            </a>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon3.png" alt="">
-              <span>材质精选</span>
-            </a>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon3.png" alt="">
-              <span>材质精选</span>
-            </a>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon3.png" alt="">
-              <span>材质精选</span>
-            </a>
-          </div>
-        </li>
-        <li class="catalog-column fl">
-          <div class="title">春夏焕新</div>
-          <div>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon1.png" alt="">
-              <span>夏凉系列</span>
-            </a>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon2.png" alt="">
-              <span>主题床品</span>
-            </a>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon3.png" alt="">
-              <span>材质精选</span>
-            </a>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon3.png" alt="">
-              <span>材质精选</span>
-            </a>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon3.png" alt="">
-              <span>材质精选</span>
-            </a>
-          </div>
-        </li>
-        <li class="catalog-column fl">
-          <div class="title">春夏焕新</div>
-          <div>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon1.png" alt="">
-              <span>夏凉系列</span>
-            </a>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon2.png" alt="">
-              <span>主题床品</span>
-            </a>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon3.png" alt="">
-              <span>材质精选</span>
-            </a>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon3.png" alt="">
-              <span>材质精选</span>
-            </a>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon3.png" alt="">
-              <span>材质精选</span>
-            </a>
-          </div>
-        </li>
-        <li class="catalog-column fl">
-          <div class="title">春夏焕新</div>
-          <div>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon1.png" alt="">
-              <span>夏凉系列</span>
-            </a>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon2.png" alt="">
-              <span>主题床品</span>
-            </a>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon3.png" alt="">
-              <span>材质精选</span>
-            </a>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon3.png" alt="">
-              <span>材质精选</span>
-            </a>
-            <a href="#" class="catalog-item">
-              <img src="imgs/cataicon3.png" alt="">
-              <span>材质精选</span>
+            <a v-for="(child,index2) in item.children" 
+            :key="index2" :href="child.href" class="catalog-item">
+              <img :src="child.src|imgurl" alt="">
+              <span>{{child.title}}</span>
             </a>
           </div>
         </li>
@@ -183,7 +25,28 @@
 
 <script type="text/javascript">
 export default {
-
+  data(){
+    return {
+      data:null,
+      cur:0,
+      catalog:['首页','居家生活','服饰鞋包','个户清理','母婴亲子','运动旅行',
+      '数码家电','礼品特色','为你严选','众筹']
+    }
+  },
+  async created(){
+    
+  },
+  watch: {
+    async cur(){
+      if(this.cur==-1){
+        this.data = null
+      }else{
+        let _data = await this.models.header.catalog(this.cur)
+        this.data = _data.data.data
+        console.log(this.data)
+      }
+    }
+  }
 }
 </script>
 

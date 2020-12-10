@@ -5,7 +5,8 @@ import axios from './axios'
 
 import './assets/css/base.css'
 import './components';
-import './models'
+import './models';
+import './filters';
 
 Vue.config.productionTip = false
 

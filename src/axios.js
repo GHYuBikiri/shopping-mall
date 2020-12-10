@@ -1,12 +1,11 @@
-import Vue from 'vue';
 import Axios from 'axios';
 import ev from '@/libs/events'
-import {ROOT} from '@/config';
+import {ROOT,API_KEY} from '@/config';
 
 const axios = Axios.create({
   baseURL: ROOT,
   headers: {
-    apikey: '9dccf313114a4826afd97b7197e13b57'
+    apikey: API_KEY
   }
 })
 let loading = 0;
