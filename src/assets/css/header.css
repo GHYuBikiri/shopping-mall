@@ -46,7 +46,6 @@
   position:absolute;z-index:99;
   left:18px;top:38px;
   border:1px solid #e8e8e8;
-  display:none;
 }
 .header .suggest li {
   padding-left:10px;padding-right:12px;

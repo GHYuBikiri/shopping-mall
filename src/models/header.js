@@ -22,5 +22,13 @@ async function catalog(index){
   
 }
 
+async function searchautocomplete(kw){
+  return await axios('/searchautocomplete',{
+    params:{
+      kw
+    }
+  })
+}
+
 Vue.prototype.models=Vue.prototype.models||{};
-Vue.prototype.models.header={catalog};
+Vue.prototype.models.header={catalog,searchautocomplete};
